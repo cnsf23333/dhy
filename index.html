@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>美化导航页</title>
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    // 自动跳转功能
+    function autoRedirect() {
+      const targetUrl = "#services"; // 目标链接
+      let countdown = 5; // 倒计时时间（秒）
+      const countdownElement = document.getElementById("countdown");
+
+      // 每秒更新倒计时
+      const interval = setInterval(() => {
+        countdown--;
+        countdownElement.textContent = countdown; // 更新页面上的倒计时
+
+        if (countdown <= 0) {
+          clearInterval(interval); // 停止计时器
+          window.location.href = targetUrl; // 跳转到目标页面
+        }
+      }, 1000);
+    }
+  </script>
+</head>
+
+<body onload="autoRedirect()">
+  <header>
+    <nav class="navbar">
+      <div class="logo">导航页</div>
+      <ul class="nav-links">
+        <li><a href="#home">首页</a></li>
+        <li><a href="#about">关于我们</a></li>
+        <li><a href="#services">服务</a></li>
+        <li><a href="#contact">联系我们</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home">
+      <div class="content">
+        <h1>欢迎来到导航页</h1>
+        <p>
+          <span id="countdown">5</span> 秒后将自动跳转到“服务”部分。
+        </p>
+      </div>
+    </section>
+    <section id="about">
+      <h2>关于我们</h2>
+      <p>这里是关于我们的内容。</p>
+    </section>
+    <section id="services">
+      <h2>我们的服务</h2>
+      <p>这里是服务内容。</p>
+    </section>
+    <section id="contact">
+      <h2>联系我们</h2>
+      <p>联系方式在这里。</p>
+    </section>
+  </main>
+</body>
+
+</html>
