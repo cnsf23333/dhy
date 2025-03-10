@@ -1,10 +1,54 @@
 /* 通用样式 */
+/* 设置导航栏文字为动态渐变色 */
+#dynamic-title {
+  font-size: 2rem; /* 标题字体大小 */
+  font-weight: bold; /* 标题加粗 */
+  margin: 0;
+  line-height: 1.2;
+  white-space: nowrap; /* 防止换行 */
+  background: linear-gradient(90deg, #0004ff, #ee09eefb, #ff0055); /* 动态渐变色 */
+  background-size: 300%; /* 扩大背景范围以实现移动效果 */
+  -webkit-background-clip: text; /* WebKit 前缀 */
+  background-clip: text; /* 标准属性 */
+  color: transparent; /* 使文字透明，以便显示渐变 */
+  animation: gradient-animation 3s linear infinite; /* 添加渐变动画 */
+}
+
+/* 定义渐变动画 */
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%; /* 开始位置 */
+  }
+  50% {
+    background-position: 100% 50%; /* 中间位置 */
+  }
+  100% {
+    background-position: 0% 50%; /* 回到起始位置 */
+  }
+}
+
+
+
+/* 定义渐变动画 */
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%; /* 开始位置 */
+  }
+  50% {
+    background-position: 100% 50%; /* 中间位置 */
+  }
+  100% {
+    background-position: 0% 50%; /* 回到起始位置 */
+  }
+}
+
+
 body {
   font-family: "霞鹜文楷", sans-serif;
   margin: 0;
   padding: 0;
   line-height: 1.6;
-  background-image: url('http://cdnjson.com/images/2024/10/29/34K_remastered.jpg'); /* 自定义背景图片路径 */
+  background-image: url('https://s21.ax1x.com/2024/12/27/pAv7481.jpg'); /* 自定义背景图片路径 */
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -50,7 +94,7 @@ body {
 main {
   padding: 2rem;
   backdrop-filter: blur(5px); /* 主体模糊效果 */
-  background: rgba(255, 255, 255, 0.5); /* 白色透明背景 */
+  background: rgba(255, 255, 255, 0.4); /* 白色透明背景 */
   margin: 1rem auto;
   max-width: 800px;
   border-radius: 10px;
@@ -74,7 +118,7 @@ h1, h2 {
 
 #countdown {
   font-weight: bold;
-  color: #e76f51; /* 倒计时颜色 */
+  color: #fd3434; /* 倒计时颜色 */
   font-size: 2rem;
 }
 
